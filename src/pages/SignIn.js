@@ -19,7 +19,7 @@ const SignIn = () => {
       navigate('/');
     } catch (err) {
       setError(err.message);
-      toast.error(err.message);
+      toast.error('first sign up');
     }
   };
 
