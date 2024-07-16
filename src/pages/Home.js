@@ -63,8 +63,8 @@ const BookmarkManager = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold mb-4">Bookmark Manager</h1>
+    <div className='w-1/2 m-auto '>
+      <h1 className=" text-4xl font-bold mb-4">Bookmark Manager</h1>
       {user ? (
         <>
           <div className="mb-4">
@@ -83,21 +83,21 @@ const BookmarkManager = () => {
               placeholder="Bookmark URL"
             />
             <button onClick={addBookmark} className="bg-blue-500 text-white px-4 py-2 rounded mt-2">Add</button>
-          </div>
-          <ul className="space-y-4">
+          </div >
+          <ul className="space-y-4 ">
             {bookmarks.map(bookmark => (
-              <li key={bookmark.id} className="flex justify-between items-center">
+              <li key={bookmark.id} className="flex justify-between items-center  bg-gray-300  p-4 ">
                 {editing === bookmark.id ? (
                   <>
                     <input
                       type="text"
-                      className="w-full p-2 border border-gray-300 rounded"
+                      className="w-full p-2 border border-gray-300 rounded mr-2"
                       value={currentBookmarkName}
                       onChange={(e) => setCurrentBookmarkName(e.target.value)}
                     />
                     <input
                       type="url"
-                      className="w-full p-2 border border-gray-300 rounded mt-2"
+                      className="w-full p-2 border border-gray-300 rounded mr-2 "
                       value={currentBookmarkUrl}
                       onChange={(e) => setCurrentBookmarkUrl(e.target.value)}
                     />
@@ -105,15 +105,17 @@ const BookmarkManager = () => {
                   </>
                 ) : (
                   <>
-                    <div>
+                 
+                    <div >
                       <span className="font-bold">{bookmark.name}</span>
                       <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="block text-blue-500">{bookmark.url}</a>
                     </div>
-                    <div className="space-x-2">
+                    <div className="space-x-2 ">
                       <button onClick={() => { setEditing(bookmark.id); setCurrentBookmarkName(bookmark.name); setCurrentBookmarkUrl(bookmark.url); }} className="bg-yellow-500 text-white px-4 py-2 rounded">Edit</button>
                       <button onClick={() => deleteBookmark(bookmark.id)} className="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
                       <button onClick={() => togglePinBookmark(bookmark.id, bookmark.pinned)} className="bg-purple-500 text-white px-4 py-2 rounded">{bookmark.pinned ? "Unpin" : "Pin"}</button>
                     </div>
+                  
                   </>
                 )}
               </li>

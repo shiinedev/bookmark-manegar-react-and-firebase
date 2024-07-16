@@ -13,12 +13,12 @@ const Navbar = ({ user }) => {
   };
 
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-800 p-4 ">
+      <div className="container w-4/5 mx-auto flex justify-between items-center">
         <div className="text-white font-bold">Bookmark Manager</div>
         <div className="space-x-4 flex">
  
-          {user && <Link to="/bookmarks" className="text-gray-300 hover:text-white">Home</Link>}
+          {user && <Link to="/" className="text-gray-300 hover:text-white">Home</Link>}
          
           <Link to="/about" className="text-gray-300 hover:text-white">About</Link>
           <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>

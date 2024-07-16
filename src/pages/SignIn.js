@@ -24,7 +24,7 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <div className='w-1/2 m-auto '>
       <h1 className="text-4xl font-bold mb-4">Sign In</h1>
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
