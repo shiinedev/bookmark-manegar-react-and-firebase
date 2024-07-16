@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='w-4/5 m-auto '>
+    <div className='sm:w-100 md:w-3/4 md:mx-auto lg:w-4/5 lg:mx-auto '>
       <h1 className="text-4xl font-bold mb-4">About Us</h1>
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-2">Our Mission</h2>

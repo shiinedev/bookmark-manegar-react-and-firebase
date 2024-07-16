@@ -14,7 +14,7 @@ const Navbar = ({ user }) => {
 
   return (
     <nav className="bg-gray-800 p-4 ">
-      <div className="container w-4/5 mx-auto flex justify-between items-center">
+      <div className="container sm:w-100 md:w-3/4 md:mx-auto lg:w-4/5 lg:mx-auto flex justify-between items-center">
         <div className="text-white font-bold">Bookmark Manager</div>
         <div className="space-x-4 flex">
  

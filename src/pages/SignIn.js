@@ -18,13 +18,13 @@ const SignIn = () => {
       toast.success("Signed in successfully!");
       navigate('/');
     } catch (err) {
-      setError(err.message);
+      setError(err.toast);
       toast.error('first sign up');
     }
   };
 
   return (
-    <div className='w-1/2 m-auto '>
+    <div className='sm:w-100 md:w-3/4 md:mx-auto lg:w-1/2 lg:mx-auto bg-white shadow-lg p-8 mt-16 '>
       <h1 className="text-4xl font-bold mb-4">Sign In</h1>
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">

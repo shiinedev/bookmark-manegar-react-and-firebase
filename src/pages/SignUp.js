@@ -18,13 +18,13 @@ const SignUp = () => {
       toast.success("Account created successfully!");
       navigate('/');
     } catch (err) {
-      setError(err.message);
-      toast.error(err.message);
+      setError(err.toast);
+      toast.error("already regestred");
     }
   };
 
   return (
-    <div className='w-1/2 m-auto '>
+    <div className='sm:w-100 md:w-3/4 md:mx-auto lg:w-1/2 lg:mx-auto  shadow-lg p-8 bg-white mt-16'>
       <h1 className="text-4xl font-bold mb-4">Sign Up</h1>
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
