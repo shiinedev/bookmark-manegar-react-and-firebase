@@ -15,12 +15,12 @@ A web application to manage bookmarks using React.js, Tailwind CSS, and Firebase
 - **Firebase**:
   - **Authentication**: For user sign-up and login.
   - **Firestore**: For storing and managing Bookmars.
-  -**react icons**: For ordering the bookmarks.
+  - **react icons**: For sorting the bookmarks.
   - **vercel**: For deploying the application.
 - **React Router**: For navigation between different pages.
 - **React Toastify**: For user-friendly notifications.
 - **Tailwind CSS**: For styling the application.
--**react icons**: For using the icons of the application.
+- **react icons**: For using the icons of the application.
 
 
 ## Setup
