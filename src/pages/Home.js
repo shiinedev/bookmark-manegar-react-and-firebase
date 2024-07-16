@@ -100,7 +100,7 @@ const BookmarkManager = () => {
   };
 
   return (
-    <div className='sm:w-100 md:w-3/4 md:m-auto lg:w-4/5 lg:m-auto'>
+    <div className='sm:w-100  lg:w-3/4 lg:m-auto'>
       <h1 className="text-4xl font-bold mb-4">Bookmark Manager</h1>
       {user ? (
         <>
@@ -121,9 +121,9 @@ const BookmarkManager = () => {
             />
             <button onClick={addBookmark} className="bg-blue-500 text-white px-4 py-2 rounded mt-2">Add</button>
           </div>
-          <ul className="space-y-4">
+          <ul className="space-y-4 ">
             {bookmarks.map(bookmark => (
-              <li key={bookmark.id} className="flex justify-between items-center">
+              <li key={bookmark.id} className="flex justify-between items-center bg-gray-300 p-3 rounded">
                 {editing === bookmark.id ? (
                   <>
                     <input
