@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { onAuthStateChanged } from 'firebase/auth';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -17,6 +16,7 @@ import { auth } from './services/firebase';
 const App = () => {
   const [user, setUser] = useState(null);
 
+  //user
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user);

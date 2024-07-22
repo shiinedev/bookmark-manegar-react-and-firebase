@@ -1,11 +1,11 @@
-// src/pages/BookmarkManager.js
+// src/BookmarkManager.js
 import React, { useState, useEffect } from 'react';
 import { db, auth } from '../services/firebase';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc, query, where, orderBy } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
-import {  FaRegThumbsDown, FaThumbtack } from 'react-icons/fa';
+import {   FaThumbtack } from 'react-icons/fa'; // Import pin icons
 
- // Import pin icons
+
 
 const BookmarkManager = () => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -28,6 +28,7 @@ const BookmarkManager = () => {
     });
   }, []);
 
+  // fetch Bookmarks
   const fetchBookmarks = async (userId) => {
     const q = query(
       collection(db, "bookmarks"),
@@ -38,6 +39,7 @@ const BookmarkManager = () => {
     const bookmarksData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     setBookmarks(bookmarksData);
   };
+  //addBookmark
 
   const addBookmark = async () => {
     if (user) {
@@ -49,6 +51,7 @@ const BookmarkManager = () => {
     }
   };
 
+  //updateBookmark
   const updateBookmark = async (id) => {
     const bookmarkDoc = doc(db, "bookmarks", id);
     await updateDoc(bookmarkDoc, { name: currentBookmarkName, url: currentBookmarkUrl });
@@ -57,13 +60,14 @@ const BookmarkManager = () => {
     setCurrentBookmarkUrl('');
     fetchBookmarks(user.uid);
   };
-
+//delete Bookmark
   const deleteBookmark = async (id) => {
     const bookmarkDoc = doc(db, "bookmarks", id);
     await deleteDoc(bookmarkDoc);
     fetchBookmarks(user.uid);
   };
 
+  //pin bookmark
   const togglePinBookmark = async (id, currentStatus) => {
     const bookmarkDoc = doc(db, "bookmarks", id);
     // const bookmark = bookmarks.find(bookmark => bookmark.id === id);
@@ -119,11 +123,11 @@ const BookmarkManager = () => {
               onChange={(e) => setNewBookmarkUrl(e.target.value)}
               placeholder="Bookmark URL"
             />
-            <button onClick={addBookmark} className="bg-blue-500 text-white px-4 py-2 rounded mt-2">Add</button>
+            <button onClick={addBookmark} className="bg-black text-white px-4 py-2 rounded mt-2">Add</button>
           </div>
           <ul className="space-y-4 ">
             {bookmarks.map(bookmark => (
-              <li key={bookmark.id} className="flex justify-between items-center bg-gray-300 p-3 rounded">
+              <li key={bookmark.id} className="flex justify-between items-center bg-gray-200 p-3 rounded">
                 {editing === bookmark.id ? (
                   <>
                     <input
@@ -138,7 +142,7 @@ const BookmarkManager = () => {
                       value={currentBookmarkUrl}
                       onChange={(e) => setCurrentBookmarkUrl(e.target.value)}
                     />
-                    <button onClick={() => updateBookmark(bookmark.id)} className="bg-green-500 text-white px-4 py-2 rounded">Save</button>
+                    <button onClick={() => updateBookmark(bookmark.id)} className="bg-gray-800 text-white px-4 py-2 rounded">Save</button>
                   </>
                 ) : (
                   <>
@@ -147,9 +151,9 @@ const BookmarkManager = () => {
                       <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="block text-blue-500">{bookmark.url}</a>
                     </div>
                     <div className="space-x-2 flex items-center">
-                      <button onClick={() => { setEditing(bookmark.id); setCurrentBookmarkName(bookmark.name); setCurrentBookmarkUrl(bookmark.url); }} className="bg-yellow-500 text-white px-4 py-2 rounded">Edit</button>
-                      <button onClick={() => deleteBookmark(bookmark.id)} className="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
-                      <button onClick={() => togglePinBookmark(bookmark.id, bookmark.pinned)} className="text-white  bg-purple-500 p-2 rounded">
+                      <button onClick={() => { setEditing(bookmark.id); setCurrentBookmarkName(bookmark.name); setCurrentBookmarkUrl(bookmark.url); }} className="bg-gray-100 text-black px-4 py-2 rounded">Edit</button>
+                      <button onClick={() => deleteBookmark(bookmark.id)} className="bg-black text-white px-4 py-2 rounded">Delete</button>
+                      <button onClick={() => togglePinBookmark(bookmark.id, bookmark.pinned)} className="text-white  bg-gray-800 p-2 rounded">
                         {bookmark.pinned ? <FaThumbtack /> : "pin"}
                       </button>
                     </div>

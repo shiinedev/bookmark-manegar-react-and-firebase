@@ -6,13 +6,16 @@ import { signOut } from 'firebase/auth';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Import menu icons
 
 const Navbar = ({ user }) => {
+ 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
+  //handle logout
   const handleLogout = async () => {
     await signOut(auth);
     navigate('/signin');
   };
+  //side bar
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };

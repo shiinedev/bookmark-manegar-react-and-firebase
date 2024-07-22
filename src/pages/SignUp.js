@@ -11,9 +11,11 @@ const SignUp = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  //sing up function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      //user regestration
       await createUserWithEmailAndPassword(auth, email, password);
       toast.success("Account created successfully!");
       navigate('/');
@@ -48,7 +50,7 @@ const SignUp = () => {
             required
           />
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Sign Up</button>
+        <button type="submit" className="bg-black text-white px-4 py-2 rounded">Sign Up</button>
       </form>
     </div>
   );

@@ -6,6 +6,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  //contact 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission (e.g., send an email or store in a database)

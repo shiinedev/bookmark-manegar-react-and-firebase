@@ -11,15 +11,18 @@ const SignIn = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+
+  //singin funtion
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      //user singin
       await signInWithEmailAndPassword(auth, email, password);
       toast.success("Signed in successfully!");
       navigate('/');
     } catch (err) {
       setError(err.toast);
-      toast.error('first sign up');
+      toast.error('incorrect!');
     }
   };
 
@@ -48,7 +51,7 @@ const SignIn = () => {
             required
           />
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Sign In</button>
+        <button type="submit" className="bg-black text-white px-4 py-2 rounded">Sign In</button>
       </form>
     </div>
   );
