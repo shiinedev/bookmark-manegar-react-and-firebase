@@ -45,7 +45,7 @@ const Contact = () => {
             required
           />
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
+        <button type="submit" className="bg-black text-white px-4 py-2 rounded">Send</button>
       </form>
     </div>
   );

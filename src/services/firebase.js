@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey:"AIzaSyCbbParHS-jrA0DSrt-zX2l64yj7NIWpkU",
-    authDomain:"bookmarkmanegar.firebaseapp.com",
-    projectId:"bookmarkmanegar",
-    storageBucket: "bookmarkmanegar.appspot.com,",
-    messagingSenderId: "179785553401",
-    appId: "1:179785553401:web:0509daa0b771a6002a5928"
+    apiKey:process.env.REACT_APP_API_KEY,
+    authDomain:process.env.REACT_APP_AUTH_DOMAIN,
+    projectId:process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MASSEGING_SENDER_ID,
+    appId: process.env.REACT_APP_ID
   };
 
 const app = initializeApp(firebaseConfig);

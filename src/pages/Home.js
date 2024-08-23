@@ -127,7 +127,8 @@ const BookmarkManager = () => {
           </div>
           <ul className="space-y-4 ">
             {bookmarks.map(bookmark => (
-              <li key={bookmark.id} className="flex justify-between items-center bg-gray-200 p-3 rounded">
+              <li key={bookmark.id} className="flex justify-between items-center bg-gray-2
+              00 p-3 rounded">
                 {editing === bookmark.id ? (
                   <>
                     <input
