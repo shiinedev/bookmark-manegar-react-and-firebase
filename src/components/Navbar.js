@@ -29,7 +29,7 @@ const Navbar = ({ user }) => {
             {sidebarOpen ? <FaTimes /> : <FaBars />}
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
-          {user && <Link to="/" className="text-white  bg-black hover:bg-gray-900 py-1 px-3  rounded ">Home</Link>}
+          {user && <Link to="/" className="text-black bg-gray-400  py-1 px-3  rounded ">Home</Link>}
             <Link to="/about" className="text-gray-300 hover:text-black hover:bg-gray-400 px-2 py-1 rounded">About</Link>
             <Link to="/contact" className="text-gray-300  hover:text-black hover:bg-gray-400 px-2 py-1 rounded">Contact</Link>
             {!user && <Link to="/signin" className="text-gray-300  hover:text-black hover:bg-gray-400 px-2 py-1 rounded border border-gray-200">Sign In</Link>}

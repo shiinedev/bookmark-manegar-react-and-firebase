@@ -10,6 +10,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission (e.g., send an email or store in a database)
+    
   };
 
   return (
